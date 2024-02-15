@@ -6,25 +6,12 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 import NotFound from './pages/NotFound'
 
+
 function App() {
-
-    const [ loading , setLoading ] = useState(false);
-
-    async function fetchData(){
-        setLoading(true);
-
-        try{
-
-        }catch(error){
-            console.log("fat gaya bc")
-        }
-
-        setLoading(false);
-    }
 
     return(
 
-        <div>
+        <div className=' w-screen min-h-screen overflow-hidden'>
             <div>
                 <Navbar />
             </div>
