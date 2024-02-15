@@ -36,13 +36,13 @@ function Home() {
     },[])
 
 return (
-        <div className=' w-full h-full'>
+        <div className='w-full '>
 
             {
                 loading ? ( <Spinner /> ) : (
 
                     posts.length > 0 ? (
-                        <div className=' flex flex-wrap'>
+                        <div className=' bg-pink-300 flex flex-row flex-wrap gap-y-10 justify-evenly px-4 py-10'>
                             {
                                 posts.map( (post) => {
                                     return ( <Product post={post} key={post.id} /> )

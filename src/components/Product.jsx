@@ -20,36 +20,40 @@ function Product({post}) {
     }
 
 return (
-    <div className=' flex flex-col w-[250px]'>
+    <div className=' flex flex-col justify-between gap-4 rounded-lg bg-white px-10 py-5 w-[320px] hover:scale-105 ease-in transition-all duration-300'>
 
         <div>
-            <p className=' font-bold text-2xl'>{post.title}</p>
+            <div className=' mb-3'>
+                <p className=' font-semibold text-xl truncate'>{post.title}</p>
+            </div>
+
+            <div>
+                <p>{post.description.split(" ").slice(0,10).join(" ")+"..."}</p>
+            </div>
         </div>
 
         <div>
-            <p>{post.description}</p>
+            <img src={post.image}/>
         </div>
 
-        <div>
-            <img src={post.image} width={180} />
-        </div>
+        <div className=' flex justify-between items-center'>
+            <div>
+                <p className=' text-green-600 font-bold text-xl'> ${post.price}</p>
+            </div>
 
-        <div>
-            <p className=' text-green-600 font-bold text-2xl'> Rs. {post.price}</p>
-        </div>
-
-        <div>
-            {
-                cart.some( (p)=> p.id == post.id) ? (
-                    <button onClick={removeFromCart}>
-                        Remove from Cart
-                    </button>
-                ) : (
-                    <button onClick={addToCart}>
-                        Add to cart
-                    </button>
-                )
-            }
+            <div className=' border-blue-950 border-2 rounded-xl px-3 py-1 hover:scale-105 transition-all ease-in duration-200 hover:text-white hover:bg-blue-900'>
+                {
+                    cart.some( (p)=> p.id == post.id) ? (
+                        <button onClick={removeFromCart}>
+                            Remove from Cart
+                        </button>
+                    ) : (
+                        <button onClick={addToCart}>
+                            Add to cart
+                        </button>
+                    )
+                }
+            </div>
         </div>
 
     <Toaster />

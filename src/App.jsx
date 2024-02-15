@@ -11,7 +11,7 @@ function App() {
 
     return(
 
-        <div className=' w-screen min-h-screen overflow-hidden'>
+        <div className=' min-w-screen min-h-screen'>
             <div>
                 <Navbar />
             </div>
